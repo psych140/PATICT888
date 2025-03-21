@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adam's Profile</title>
+    <style>
+        /* General Styling */
+        body {
+            background-color: #1a001a;
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Background Gradient Overlay */
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #3e0d3e, #1a001a);
+            z-index: -3;
+            opacity: 0.8;
+        }
+
+        /* Glitter Effect */
+        .glitter {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: #bb86fc;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #bb86fc;
+            opacity: 0;
+            animation: twinkle 2s infinite ease-in-out;
+            z-index: -2;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        /* Shapes */
+        .shape {
+            position: absolute;
+            background-color: rgba(187, 134, 252, 0.2);
+            z-index: -1;
+            border-radius: 50%;
+            filter: blur(20px);
+            animation: floatShape 5s infinite ease-in-out;
+        }
+
+        .shape.circle {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 15%;
+            animation-delay: 0.5s;
+        }
+
+        .shape.square {
+            width: 80px;
+            height: 80px;
+            top: 60%;
+            left: 70%;
+            border-radius: 12px;
+            animation-delay: 1s;
+        }
+
+        @keyframes floatShape {
+            0%, 100% {
+                transform: translateY(0) rotate(0);
+            }
+            50% {
+                transform: translateY(-20px) rotate(15deg);
+            }
+        }
+
+        /* Profile Container */
+        .profile-container {
+            background: linear-gradient(135deg, #5e17eb, #2a0a5e);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(94, 23, 235, 0.6);
+            width: 350px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid #bb86fc;
+        }
+
+        .profile-container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(94, 23, 235, 0.8);
+        }
+
+        /* Profile Picture */
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 4px solid #bb86fc;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 12px;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(187, 134, 252, 0.8);
+        }
+
+        /* Name */
+        .profile-name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #d3afff;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Age and Birthday */
+        .profile-info {
+            font-size: 16px;
+            font-weight: 500;
+            color: #bb86fc;
+            margin-bottom: 8px;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+        }
+
+        /* Quote */
+        .profile-quote {
+            font-size: 18px;
+            font-weight: 400;
+            font-style: italic;
+            color: #e0b0ff;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            letter-spacing: 0.3px;
+            transition: color 0.3s ease;
+        }
+
+        .profile-quote:hover {
+            color: #d3afff;
+        }
+
+        /* Audio Styling */
+        .audio-container {
+            display: flex;
+            justify-content: center;
+            background-color: #2a0a5e;
+            padding: 8px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(187, 134, 252, 0.4);
+            margin-top: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .audio-container:hover {
+            transform: scale(1.05);
+        }
+
+        audio {
+            width: 100%;
+            filter: invert(1) brightness(0.9) contrast(1.2);
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 400px) {
+            .profile-container {
+                padding: 30px;
+            }
+
+            .profile-name {
+                font-size: 24px;
+            }
+
+            .profile-info {
+                font-size: 14px;
+            }
+
+            .profile-quote {
+                font-size: 16px;
+            }
+
+            .profile-pic {
+                width: 100px;
+                height: 100px;
+            }
+
+            audio {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="background-overlay"></div>
+
+<!-- Glitter Elements -->
+<script>
+    for (let i = 0; i < 30; i++) {
+        const glitter = document.createElement('div');
+        glitter.className = 'glitter';
+        glitter.style.top = `${Math.random() * 100}vh`;
+        glitter.style.left = `${Math.random() * 100}vw`;
+        glitter.style.animationDelay = `${Math.random() * 2}s`;
+        document.body.appendChild(glitter);
+    }
+</script>
+
+<!-- Shapes -->
+<div class="shape circle"></div>
+<div class="shape square"></div>
+
+<div class="profile-container">
+    <img src="dam.jpg" alt="Adam's Profile Pic" class="profile-pic">
+    <div class="profile-name">Adam A. Jimenez</div>
+    <div class="profile-info">13 • October 8, 2011</div>
+    <div class="profile-quote">"I like playing games. I love cats."</div>
+    <div class="audio-container">
+        <audio controls>
+            <source src="Wouldn't You Like  EPIC_ The Musical Animatic.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+</div>
+
+</body>
+</html>
