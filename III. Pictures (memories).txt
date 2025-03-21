@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Grade 8 Photos</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #000, #8b0000);
+            font-family: 'Poppins', sans-serif;
+            color: #ffd700;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-family: 'Pacifico', cursive;
+            color: #ffd700;
+            text-shadow: 3px 3px 10px rgba(255, 215, 0, 0.8);
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .column {
+            flex: 1 1 calc(20% - 20px);
+            max-width: 20%;
+            padding: 10px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .star-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5rem;
+            color: #d4af37;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .column:hover .star-overlay {
+            opacity: 1;
+            color: #ffd700;
+        }
+
+        .message-container {
+            margin-top: 50px;
+        }
+
+        .hidden-message {
+            display: none;
+            font-size: 1.5rem;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .reveal-button {
+            background: #ffd700;
+            color: #000;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .reveal-button:hover {
+            background: #b8860b;
+        }
+
+        @media (max-width: 768px) {
+            .column {
+                flex: 1 1 calc(45% - 20px);
+                max-width: 45%;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .column {
+                flex: 1 1 calc(90% - 20px);
+                max-width: 90%;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1>HOLLYWOOD MEMORIES ⭐</h1>
+    <div class="gallery">
+        <script>
+            let images = [
+                "18.jpg", "28.jpg", "38.jpg", "48.jpg", "58.jpg", "68.jpg", "78.jpg", "88.jpg", "98.jpg", "108.jpg", 
+                "118.jpg", "128.jpg", "138.jpg", "148.jpg", "158.jpg", "168.jpg", "178.jpg", "hallo.jpg", "198.jpg", "208.jpg", 
+                "308.jpg", "408.jpg", "508.jpg", "ghb.jpg", "ghb2.jpg", "val.jpg"
+            ];
+            
+            images.forEach((src, index) => {
+                document.write(`
+                    <div class="column" onclick="revealImage(${index})">
+                        <div class="image-container">
+                            <span class="star-overlay">\u2605</span>
+                            <img id="img${index}" src="${src}" alt="Pic ${index + 1}">
+                        </div>
+                    </div>
+                `);
+            });
+        </script>
+    </div>
+
+    <div class="message-container">
+        <button class="reveal-button" onclick="revealMessage()">Click to reveal</button>
+        <div id="sadMessage" class="hidden-message">
+            "As the curtains close on Grade 8, the memories we made will forever shine like stars on our own Hollywood Walk of Fame. This all led to a supercalifragilisticexpialidocious film. Thank you, see ya!"
+        </div>
+    </div>
+
+    <script>
+        function revealImage(index) {
+            let img = document.getElementById(`img${index}`);
+            let star = img.previousElementSibling;
+            img.style.display = "block";
+            star.style.display = "none";
+        }
+
+        function revealMessage() {
+            document.getElementById('sadMessage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
