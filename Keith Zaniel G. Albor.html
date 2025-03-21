@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keith's Profile</title>
+    <style>
+        /* General Styling */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        body {
+            background-color: #002800;
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        /* Profile Container */
+        .profile-container {
+            background: linear-gradient(135deg, #43a047, #1b5e20);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 12px 30px rgba(67, 160, 71, 0.6);
+            width: 400px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid #66bb6a;
+            z-index: 10;
+        }
+
+        .profile-container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 16px 40px rgba(67, 160, 71, 0.8);
+        }
+
+        /* Profile Picture */
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #66bb6a;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 12px;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(102, 187, 106, 0.8);
+        }
+
+        /* Name */
+        .profile-name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #c8e6c9;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Age */
+        .profile-info {
+            font-size: 16px;
+            font-weight: 500;
+            color: #a5d6a7;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            opacity: 0.9;
+        }
+
+        /* Message */
+        .profile-quote {
+            font-size: 18px;
+            font-weight: 400;
+            font-style: italic;
+            color: #b9f6ca;
+            margin-bottom: 20px;
+            letter-spacing: 0.3px;
+            transition: color 0.3s ease;
+            line-height: 1.6;
+        }
+
+        .profile-quote:hover {
+            color: #c8e6c9;
+        }
+
+        /* Audio Styling */
+        .audio-container {
+            display: flex;
+            justify-content: center;
+            background-color: #1b5e20;
+            padding: 8px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(102, 187, 106, 0.4);
+            margin-top: 10px;
+            transition: transform 0.2s ease;
+        }
+
+        .audio-container:hover {
+            transform: scale(1.05);
+        }
+
+        audio {
+            width: 100%;
+            filter: invert(1) brightness(0.9) contrast(1.2);
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        /* Background Animation */
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200vw;
+            height: 200vh;
+            background: radial-gradient(circle, rgba(67, 160, 71, 0.4), transparent);
+            animation: moveBackground 8s linear infinite;
+            z-index: -1;
+            filter: blur(100px);
+        }
+
+        @keyframes moveBackground {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            50% {
+                transform: translate(-40%, -40%) rotate(180deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* Floating Shapes */
+        .floating-shape {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: rgba(67, 160, 71, 0.3);
+            border-radius: 50%;
+            filter: blur(40px);
+            z-index: -2;
+            animation: floatUp 6s ease-in-out infinite alternate;
+        }
+
+        .floating-shape-1 {
+            top: 10%;
+            left: 10%;
+        }
+
+        .floating-shape-2 {
+            bottom: 15%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0px);
+            }
+            100% {
+                transform: translateY(-30px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 450px) {
+            .profile-container {
+                width: 90%;
+                padding: 30px;
+            }
+
+            .profile-name {
+                font-size: 24px;
+            }
+
+            .profile-quote {
+                font-size: 16px;
+            }
+
+            .profile-pic {
+                width: 100px;
+                height: 100px;
+            }
+
+            audio {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background Animation -->
+<div class="background-animation"></div>
+
+<!-- Floating Shapes -->
+<div class="floating-shape floating-shape-1"></div>
+<div class="floating-shape floating-shape-2"></div>
+
+<!-- Profile Container -->
+<div class="profile-container">
+    <!-- Profile Picture -->
+    <img src="kei.jpeg" alt="Keith's Profile Pic" class="profile-pic">
+
+    <!-- Name -->
+    <div class="profile-name">Keith Zaniel G. Albor</div>
+
+    <!-- Age -->
+    <div class="profile-info">13 Years Old</div>
+
+    <!-- Message -->
+    <div class="profile-quote">"Suicide is never an option, never give up."</div>
+
+    <!-- Audio Section -->
+    <div class="audio-container">
+        <audio controls>
+            <source src="Sia - Chandelier (Lyrics).mp3" type="audio/mpeg">
+        </audio>
+    </div>
+</div>
+
+</body>
+</html>
