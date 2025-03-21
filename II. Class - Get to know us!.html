@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade ∞</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: 'Orbitron', sans-serif;
+            background-color: #000;
+            color: #fff;
+            height: 100vh;
+            background-image: url('GALAXYY.jpeg'); 
+        }
+
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(1);
+        }
+
+        /* Infinity Loop */
+        .infinity-loop {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            width: 400px;
+            height: 200px;
+            background: transparent;
+            border: 4px solid transparent;
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+            background-image: linear-gradient(135deg, rgba(138,43,226,0.8), rgba(75,0,130,0.8));
+            filter: blur(15px);
+            box-shadow: 0 0 30px 10px rgba(138, 43, 226, 0.8);
+            animation: rotate-loop 8s linear infinite;
+            transform-origin: center;
+        }
+
+        .infinity-loop::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 4px solid transparent;
+            border-radius: 50%;
+            background-image: linear-gradient(135deg, rgba(255,0,255,0.8), rgba(0,0,255,0.8));
+            transform: rotate(45deg);
+            filter: blur(10px);
+            box-shadow: 0 0 25px 10px rgba(255, 0, 255, 0.5);
+        }
+
+        @keyframes rotate-loop {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .container {
+            position: relative;
+            padding-top: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 150px;
+            padding-bottom: 100px;
+            z-index: 1;
+        }
+
+        .planet {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: #555;
+            transition: transform 0.3s ease;
+            box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.2);
+            background-size: 200% 200%;
+            animation: planet-glow 4s ease-in-out infinite;
+        }
+
+        .planet:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes planet-glow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            animation: orbit-spin 6s linear infinite;
+            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes orbit-spin {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .planet-name {
+            margin-top: 20px;
+            font-size: 28px;
+            color: #fff;
+            text-align: center;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+            transition: color 0.3s ease;
+        }
+
+        .planet:hover .planet-name {
+            color: #8a2be2;
+        }
+
+        /* Gradient Colors for Planets */
+        .ecco {
+            background-image: linear-gradient(135deg, #ffcc00, #ffdb4d);
+        }
+
+        .zion {
+            background-image: linear-gradient(135deg, #ff5733, #ff7f50);
+        }
+
+        .enzo {
+            background-image: linear-gradient(135deg, #5dade2, #85c1e9);
+        }
+
+        .adam {
+            background-image: linear-gradient(135deg, #a569bd, #bb8fce);
+        }
+
+        .allen {
+            background-image: linear-gradient(135deg, #58d68d, #82e0aa);
+        }
+
+        .matt {
+            background-image: linear-gradient(135deg, #f4d03f, #f7dc6f);
+        }
+
+        .keith {
+            background-image: linear-gradient(135deg, #dc7633, #e59866);
+        }
+
+        .amerie {
+            background-image: linear-gradient(135deg, #2e86c1, #5dade2);
+        }
+
+        .patrice {
+            background-image: linear-gradient(135deg, #c39bd3, #d7bde2);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Background Video -->
+<video autoplay muted loop class="background-video">
+    <source src="galaxy.mp4" type="video/mp4" />
+</video>
+
+<!-- Infinity Loop -->
+<div class="infinity-loop"></div>
+
+<div class="container">
+    <!-- Ecco -->
+    <a href="Ethan Claudio C. Oliva.html">
+        <div class="planet ecco">
+            <div class="orbit"></div>
+        </div>
+        <div class="planet-name">Ecco</div>
+    </a>
+
+    <!-- Enzo -->
+    <a href="Enzo Daniel F. Suelto.html">
+        <div class="planet enzo">
+            <div class="orbit"></div>
+        </div>
+        <div class="planet-name">Enzo</div>
+    </a>
+
+
+    <!-- Amerie -->
+    <a href="Amerie G. Villoso.html">
+        <div class="planet amerie">
+            <div class="orbit"></div>
+        </div>
+        <div class="planet-name">Amerie</div>
+    </a>
+
+    <!-- Adam -->
+    <a href="Adam A. Jimenez.html">
+        <div class="planet adam">
+            <div class="orbit"></div>
+        </div>
+        <div class="planet-name">Adam</div>
+    </a>
+
+    <!-- Allen -->
+    <a href="Allen Kurt D. Estrabela.html">
+        <div class="planet allen">
+            <div class="orbit"></div>
+        </div>
+        <div class="planet-name">Allen</div>
+    </a>
+
+    <!-- Matt -->
+    <a href="Matt David M. Gundran.html">
+        <div class="planet matt">
+            <div class="orbit"></div>
+        </div>
+        <div class="planet-name">Matt</div>
+    </a>
+
+    <!-- Keith -->
+    <a href="Keith Zaniel G. Albor.html">
+        <div class="planet keith">
+            <div class="orbit"></div>
+        </div>
+        <div class="planet-name">Keith</div>
+    </a>
+
+    <!-- Zion -->
+    <a href="Zion Wesker G. Hernandez.html">
+        <div class="planet zion">
+            <div class="orbit"></div>
+        </div>
+        <div class="planet-name">Zion</div>
+    </a>
+
+    <!-- Patrice -->
+    <a href="Patrice A. Devilleres.html">
+        <div class="planet patrice">
+            <div class="orbit"></div>
+        </div>
+        <div class="planet-name">Patrice</div>
+    </a>
+</div>
+
+</body>
+</html>
