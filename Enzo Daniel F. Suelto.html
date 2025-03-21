@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - Enzo</title>
+    <style>
+        @keyframes fireEffect {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes flicker {
+            0% {
+                opacity: 0.9;
+            }
+            50% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 0.9;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 40px rgba(179, 0, 0, 0.7), 0 0 60px rgba(102, 0, 0, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(255, 0, 0, 0.9), 0 0 50px rgba(179, 0, 0, 0.8), 0 0 70px rgba(102, 0, 0, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 40px rgba(179, 0, 0, 0.7), 0 0 60px rgba(102, 0, 0, 0.7);
+            }
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #0d0d0d;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Background animation */
+        .fire-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            background: linear-gradient(135deg, #330000, #660000, #990000, #330000);
+            background-size: 400% 400%;
+            animation: fireEffect 5s ease infinite, flicker 1.5s infinite alternate;
+        }
+
+        .container {
+            background-color: #1a1a1a;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.6);
+            width: 400px;
+            text-align: center;
+            border: 2px solid #ff0000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: glow 2s infinite alternate;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(255, 0, 0, 0.9);
+        }
+
+        img.profile-pic {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #ff0000;
+            transition: transform 0.3s ease;
+        }
+
+        img.profile-pic:hover {
+            transform: scale(1.1);
+            border-color: #b30000;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin: 10px 0;
+            color: #ff4d4d;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-shadow: 2px 2px 6px rgba(255, 0, 0, 0.6);
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 5px 0;
+            color: #e6e6e6;
+            font-weight: 400;
+        }
+
+        /* Favorite foods */
+        .favorites {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .favorites img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            border: 2px solid #ff0000;
+        }
+
+        .favorites img:hover {
+            transform: scale(1.15);
+            box-shadow: 0 6px 12px rgba(255, 0, 0, 0.7);
+        }
+
+        /* Favorite character */
+        .fav-character {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .fav-character img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid #ff0000;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .fav-character img:hover {
+            transform: scale(1.1);
+            border-color: #b30000;
+        }
+
+        .fav-character p {
+            margin-top: 8px;
+            font-size: 18px;
+            color: #ff4d4d;
+            font-weight: 500;
+        }
+
+        /* Audio section */
+        .audio-container {
+            margin-top: 20px;
+            background-color: #660000;
+            padding: 12px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            border: 1px solid #ff0000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        audio {
+            width: 100%;
+            outline: none;
+            border-radius: 8px;
+        }
+
+        .song-title {
+            margin-bottom: 8px;
+            color: #ff9999;
+            font-size: 16px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+<div class="fire-bg"></div>
+
+<div class="container">
+    <img class="profile-pic" src="Enz0.jpeg" alt="Enzo's Profile Picture" />
+    <h1>Enzo Daniel F. Suelto</h1>
+    <p>👊 14 years old, turning 15 soon!</p>
+    <p>🎉 Birthday: <strong>June 15</strong></p>
+
+    <p>🍽️ Favorite Foods:</p>
+    <div class="favorites">
+        <img src="PIZZA.jpg" alt="Pizza" />
+        <img src="FD.jpg" alt="Fried Chicken" />
+        <img src="PASTA.jpg" alt="Pasta" />
+    </div>
+
+    <div class="fav-character">
+        <p>🏴‍☠️ Favorite Character:</p>
+        <img src="images.jpeg" alt="Zoro" />
+        <p><strong>Zoro</strong></p>
+    </div>
+
+    <div class="audio-container">
+        <div class="song-title">🎧 Now Playing: <strong>Take Me to the Beach (feat. Ado)</strong></div>
+        <audio controls>
+            <source src="Imagine Dragons - Take Me To The Beach (feat. Ado) (Official Lyric Video).mp3" type="audio/mpeg">
+        </audio>
+    </div>
+</div>
+
+</body>
+</html>
