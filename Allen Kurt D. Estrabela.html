@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Allen's Profile</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #0d0d0d;
+            overflow: hidden;
+        }
+
+        /* Background Animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, #ff0000, #3c3c3c, #0d0d0d);
+            z-index: -1;
+            animation: backgroundPulse 6s infinite alternate;
+        }
+
+        @keyframes backgroundPulse {
+            0% {
+                background: radial-gradient(circle, #ff0000, #3c3c3c, #0d0d0d);
+            }
+            100% {
+                background: radial-gradient(circle, #8b0000, #1c1c1c, #0d0d0d);
+            }
+        }
+
+        /* Floating Particles */
+        .particle {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background-color: #ff0000;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: float 6s infinite;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(-20px) translateX(10px) scale(1.2);
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0.7;
+            }
+        }
+
+        /* Profile Container */
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            z-index: 1;
+        }
+
+        /* Profile Picture */
+        .profile-pic {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ff0000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
+        }
+
+        /* Audio Player Styling */
+        .audio-container {
+            display: flex;
+            align-items: center;
+            background-color: #1a1a1a;
+            padding: 16px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
+            transition: transform 0.2s ease;
+            margin-top: 20px;
+            gap: 16px;
+        }
+
+        .audio-container:hover {
+            transform: scale(1.05);
+        }
+
+        .album-cover {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #ff0000;
+        }
+
+        audio {
+            width: 250px;
+            filter: invert(1) brightness(0.9) contrast(1.2);
+            cursor: pointer;
+        }
+
+        /* Allen's Profile Card */
+        .allen-profile {
+            background: linear-gradient(135deg, #1a1a1a, #3c3c3c);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.9);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            border: 3px solid #ff0000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .allen-profile:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(255, 0, 0, 0.8);
+        }
+
+        /* Profile Name */
+        .allen-name {
+            font-size: 40px;
+            font-weight: 700;
+            color: #ff0000;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Tagline */
+        .allen-tagline {
+            font-size: 24px;
+            font-weight: 500;
+            color: #ff0000;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        /* Separator */
+        .allen-border {
+            width: 80%;
+            height: 3px;
+            background-color: #ff0000;
+            margin: 16px auto;
+            border-radius: 2px;
+        }
+
+        /* Description */
+        .allen-description {
+            font-size: 20px;
+            color: #e0e0e0;
+            line-height: 1.8;
+            font-style: italic;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-container">
+    <div>
+        <!-- Profile Picture -->
+        <img src="len.jpeg" alt="Allen's Profile Pic" class="profile-pic">
+
+        <!-- Audio Section -->
+        <div class="audio-container">
+            <img src="3cheers.jpg" alt="Three Cheers for Sweet Revenge" class="album-cover">
+            <audio controls>
+                <source src="Hang 'Em High.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </div>
+
+    <!-- Allen's Profile -->
+    <div class="allen-profile">
+        <div class="allen-name">Allen Kurt D. Estrabela</div>
+        <div class="allen-tagline">"Insane."</div>
+        <div class="allen-border"></div>
+        <div class="allen-description">
+            Playing games and talking with my friends.<br><br>
+            Idk I got unstable self image.<br>
+            I might have BPD.
+        </div>
+    </div>
+</div>
+
+<script>
+    // Create particles
+    for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.style.left = `${Math.random() * 100}vw`;
+        particle.style.top = `${Math.random() * 100}vh`;
+        particle.style.animationDelay = `${Math.random() * 3}s`;
+        document.body.appendChild(particle);
+    }
+</script>
+
+</body>
+</html>
