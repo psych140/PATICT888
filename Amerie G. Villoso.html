@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amerie's Profile</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffebf2;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            background-image: url('download (57).jpeg'); /* Background with Pochacco */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 400px;
+            margin: auto;
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(255, 105, 180, 0.5);
+        }
+
+        img.profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ff6699;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        img.profile:hover {
+            transform: scale(1.1);
+        }
+
+        h1 {
+            color: #ff3366;
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(255, 51, 102, 0.3);
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        h2 {
+            color: #ff6699;
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 8px;
+            font-size: 16px;
+            background-color: #ffe6f2;
+            color: #ff3366;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        li:hover {
+            background-color: #ff99cc;
+            transform: scale(1.05);
+        }
+
+        .heart-gift {
+            font-size: 28px;
+            margin-top: 20px;
+            color: #ff3366;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .heart-gift:hover {
+            transform: rotate(10deg) scale(1.2);
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            border: 2px solid #ff99cc;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        /* Unique Song Section */
+        .song-section {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            background-color: rgba(255, 223, 230, 0.95);
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(255, 51, 102, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1000;
+        }
+
+        .song-section:hover {
+            transform: translateX(-5px);
+            box-shadow: 0 8px 16px rgba(255, 51, 102, 0.5);
+        }
+
+        .song-title {
+            font-size: 14px;
+            color: #ff3366;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+
+        audio {
+            width: 150px;
+            outline: none;
+            border-radius: 8px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Amerie's Profile</h1>
+        <img src="AMER13.jpeg" alt="Amerie's Profile Picture" class="profile">
+        <h2>Name: Amerie G. Villoso <br> Nickname: Amerie, Ririe, or Am</h2>
+        <p>Age: 14 years old</p>
+
+        <ul>
+            <li>⭐ ANIME</li>
+            <li>🌸 KPOP</li>
+            <li>🎶 MUSIC</li>
+            <li>📖 POEMS</li>
+        </ul>
+
+        <div class="heart-gift">🎁❤️</div>
+
+        <!-- Miffy and Enhypen Section -->
+        <div class="gallery">
+            <img src="MERRY.jpeg" alt="Miffy">
+            <img src="strawberry miffy wallpaper.jpeg" alt="Strawberry Miffy">
+            <img src="↶_ೃ✧˚_ ❃ ↷ ˊ- (1).jpeg" alt="Enhypen">
+            <img src="enhypen (1).jpeg" alt="Enhypen">
+            <img src="enhypen home 🏡.jpeg" alt="Enhypen Home">
+        </div>
+    </div>
+
+    <!-- Unique Song Section -->
+    <div class="song-section">
+        <span class="song-title">🎧 Playing: The Most Beautiful Thing - Bruno Major</span>
+        <audio controls>
+            <source src="Bruno Major - The Most Beautiful Thing (Lyric & Chord Video).mp3" type="audio/mpeg">
+        </audio>
+    </div>
+</body>
+</html>
