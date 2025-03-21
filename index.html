@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>GRADE 8 - CHARITY</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #e0f7fa, #d1c4e9);
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            text-align: center;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+            transition: transform 0.3s ease;
+            z-index: 10;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        /* Styling the hyperlinks */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-size: 1rem;
+            padding: 12px;
+            border-radius: 10px;
+            background-color: #e3f2fd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .links a:hover {
+            background-color: #d1c4e9;
+            transform: translateY(-2px);
+        }
+
+        /* Decorative wave elements */
+        .waves {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(to top, #64b5f6, transparent);
+            border-radius: 50% 50% 0 0;
+            opacity: 0.6;
+            animation: waveAnimation 4s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        .waves::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to top, #9575cd, transparent);
+            border-radius: 50% 50% 0 0;
+            opacity: 0.4;
+            animation: waveAnimation 6s infinite ease-in-out reverse;
+        }
+
+        @keyframes waveAnimation {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-20px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .links a {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="waves"></div>
+    <div class="container">
+        <h1>GRADE 8 CHARITY</h1>
+        <p>Welcome to our class charity page!</p>
+        <div class="links">
+            <a href="II. Class - Get to know us!.html">II. Class - Get to know us!</a>
+            <a href="III. Pictures (memories).html">III. Pictures (memories)</a>
+            <a href="IV. Messages.html">IV. Messages</a>
+        </div>
+    </div>
+</body>
+</html>
