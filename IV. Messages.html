@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages from Grade 8 Students</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #000000);
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 42px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1:hover {
+            transform: scale(1.05);
+            color: #d1d1ff;
+        }
+
+        .message-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .message {
+            font-size: 18px;
+            line-height: 1.8;
+            padding: 14px 20px;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-weight: 400;
+            font-family: 'Poppins', sans-serif;
+            opacity: 0;
+            animation: fadeIn 0.8s forwards;
+        }
+
+        .message:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .message::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 10%, rgba(255,255,255,0) 60%);
+            transition: opacity 0.4s ease;
+            opacity: 0;
+            z-index: 0;
+        }
+
+        .message:hover::before {
+            opacity: 0.1;
+        }
+
+        b {
+            font-weight: 600;
+            display: block;
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        /* Lightened Colors for Better Readability */
+        .pat { color: #ffd166; border-left: 5px solid #ffd166; }      /* Soft Orange */
+        .am { color: #ff91a4; border-left: 5px solid #ff91a4; }        /* Light Pink */
+        .kei { color: #7fff7f; border-left: 5px solid #7fff7f; }        /* Mint Green */
+        .allen { color: #ff6666; border-left: 5px solid #ff6666; }      /* Soft Red */
+        .enzo { color: #ff8c8c; border-left: 5px solid #ff8c8c; }       /* Light Coral */
+        .adam { color: #d1a3ff; border-left: 5px solid #d1a3ff; }       /* Soft Purple */
+        .ecco { color: #66cfff; border-left: 5px solid #66cfff; }       /* Light Blue */
+        .zion { color: #ffd166; border-left: 5px solid #ffd166; }       /* Soft Yellow */
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px;
+            }
+            .message {
+                font-size: 16px;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>Messages from Grade 8 Students</h1>
+
+<div class="message-container">
+    <div class="message zion">
+        <b>Zion</b> "Not being loved is a simple misfortune; the true misfortune is not loving."
+    </div>
+    <div class="message am">
+        <b>Am</b> "Time will pass anyway and we will find ourselves once again."
+    </div>
+    <div class="message kei">
+        <b>Kei</b> "Suicide is never an option, never give up."
+    </div>
+    <div class="message allen">
+        <b>Allen</b> "Never let anything hold you back on doing your dreams! Embrace optimistic nihilism!"
+    </div>
+    <div class="message enzo">
+        <b>Enzo</b> "Life can sometimes feel down like the weight of the world is at your back and you just wanna give up, don't give up because soon life will get better."
+    </div>
+    <div class="message adam">
+        <b>Adam</b> "If a page was ripped from your notebook, would you rip the others? Don't let one bad day ruin your whole entire year."
+    </div>
+    <div class="message ecco">
+        <b>Ecco</b> "You only live once, so live like there's no tomorrow."
+    </div>
+    <div class="message pat">
+        <b>Pat</b> "Don't cry because it's over, smile because it happened."
+    </div>
+</div>
+
+</body>
+</html>
