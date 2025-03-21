@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matt's Profile</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #8ACE00;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        .container {
+            background-color: #111;
+            padding: 40px;
+            border: 4px solid #8ACE00;
+            border-radius: 24px;
+            box-shadow: 0 0 30px #8ACE00;
+            text-align: center;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            z-index: 10;
+            animation: pulse 1.5s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 30px #8ACE00; }
+            50% { box-shadow: 0 0 50px #aaff00; }
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid #8ACE00;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px #8ACE00;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #8ACE00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 15px #8ACE00;
+        }
+
+        p {
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px #8ACE00;
+        }
+
+        .audio-control {
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #8ACE00;
+            color: #000;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 12px #8ACE00;
+        }
+
+        button:hover {
+            background-color: #aaff00;
+            box-shadow: 0 0 20px #aaff00;
+        }
+
+        /* Floating shapes */
+        .shape {
+            position: absolute;
+            background-color: #8ACE00;
+            opacity: 0.7;
+            border-radius: 50%;
+            box-shadow: 0 0 20px #8ACE00;
+            animation: float 4s infinite linear;
+            z-index: 1;
+        }
+
+        .shape1 { width: 60px; height: 60px; top: 10%; left: 10%; animation-delay: 0s; }
+        .shape2 { width: 40px; height: 40px; top: 30%; left: 80%; animation-delay: 1s; }
+        .shape3 { width: 70px; height: 70px; top: 70%; left: 50%; animation-delay: 2s; }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-20px) translateX(20px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+
+        /* Stars */
+        .star {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #8ACE00;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            box-shadow: 0 0 15px #8ACE00;
+            opacity: 0.8;
+            animation: twinkle 2s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        .star1 { top: 15%; left: 20%; animation-delay: 0.2s; }
+        .star2 { top: 45%; left: 70%; animation-delay: 0.5s; }
+        .star3 { top: 75%; left: 30%; animation-delay: 0.8s; }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 0.4; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Floating Shapes -->
+<div class="shape shape1"></div>
+<div class="shape shape2"></div>
+<div class="shape shape3"></div>
+
+<!-- Floating Stars -->
+<div class="star star1"></div>
+<div class="star star2"></div>
+<div class="star star3"></div>
+
+<div class="container">
+    <img src="matty.jpeg" alt="Matt's Profile Picture" class="profile-pic">
+    <h1>Hi, I'm Matt!</h1>
+    <p>Matt David B. Gundran</p>
+    <p>I like sketching and drawing.</p>
+    <p>I love cats and playing games.</p>
+    <p>I adore Charli XCX!!</p>
+
+    <div class="audio-control">
+        <audio id="audio" src="360.mp3"></audio>
+        <button onclick="toggleAudio()">Play 360 🎧</button>
+    </div>
+</div>
+
+<script>
+    const audio = document.getElementById('audio');
+    let isPlaying = false;
+
+    function toggleAudio() {
+        if (isPlaying) {
+            audio.pause();
+        } else {
+            audio.play();
+        }
+        isPlaying = !isPlaying;
+    }
+</script>
+
+</body>
+</html>
