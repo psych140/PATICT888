@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patrice - About Me</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        /* General Styling */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #ffffff;
+            background: url('set.jpg') no-repeat center center;
+            background-size: cover;
+            backdrop-filter: blur(6px);
+        }
+
+        /* Container */
+        .container {
+            background: rgba(255, 140, 0, 0.7);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            width: 380px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 2px solid rgba(255, 165, 0, 0.4);
+        }
+
+        .container:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(255, 102, 0, 0.6);
+        }
+
+        /* Profile Picture */
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #ff4500;
+            box-shadow: 0 6px 16px rgba(255, 69, 0, 0.7);
+            margin-bottom: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1);
+            border-color: #ff6347;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #ffe5b4;
+            font-weight: 600;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 16px;
+            color: #fff8dc;
+            margin: 4px 0;
+            font-weight: 400;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 18px;
+            color: #ffd700;
+            margin-top: 20px;
+            font-weight: 500;
+            border-bottom: 2px solid #ff6347;
+            padding-bottom: 6px;
+            display: inline-block;
+        }
+
+        /* Favorite Singers */
+        .singers, .foods {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .singers img, .foods img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #ff4500;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .singers img:hover, .foods img:hover {
+            transform: scale(1.2);
+            box-shadow: 0 4px 12px rgba(255, 69, 0, 0.8);
+        }
+
+        /* Favorite Animal (Capybara) */
+        .capybara-container {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .capybara {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 2px solid #ff4500;
+            box-shadow: 0 4px 12px rgba(255, 69, 0, 0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .capybara:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(255, 69, 0, 0.8);
+        }
+
+        /* Audio Section */
+        .audio-container {
+            margin-top: 20px;
+            background-color: rgba(255, 69, 0, 0.8);
+            padding: 12px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .audio-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 18px rgba(255, 69, 0, 0.7);
+        }
+
+        .song-title {
+            margin-bottom: 8px;
+            color: #ffe5b4;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        audio {
+            width: 100%;
+            outline: none;
+            border-radius: 6px;
+        }
+        /* Background Video */
+        .bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(60%);
+    </style>
+</head>
+<body>
+
+<!-- Background Video -->
+<video class="bg-video" autoplay loop muted>
+    <source src="Sea, Sand, Sunset_ 7 Minutes of Beautiful Sunset Therapy From California (4K Video).mp4" type="video/mp4">
+</video>
+
+<div class="container">
+    <!-- Profile Pic -->
+    <img class="profile-pic" src="pa.jpg" alt="Pat's Picture" />
+
+    <h1>Patrice A. Devilleres</h1>
+    <p>💖 14 years old</p>
+    <p>🎂 Birthday: <strong>February 26, 2011</strong></p>
+    <p>Loves the color orange because it reminds me of sunrise and sunset 🌅</p>
+
+    <!-- Favorite Singers -->
+    <div class="section-title">🎶 Favorite Singers</div>
+    <div class="singers">
+        <img src="sb.jpeg" alt="Sabrina Carpenter" />
+        <img src="sza.jpeg" alt="SZA" />
+        <img src="cr.jpeg" alt="Chappell Roan" />
+        <img src="niki.png" alt="NIKI" />
+        <img src="tyla.jpeg" alt="Tyla" />
+        <img src="xcx.jpeg" alt="Charli XCX" />
+    </div>
+
+<!-- Favorite Foods -->
+<div class="section-title">🍽️ Favorite Foods</div>
+<div class="foods">
+    <img src="kar.jpg" alt="Karioka" />
+    <img src="samyang.jpg" alt="Samyang" />
+    <img src="japsio.jpg" alt="Siomai" />
+    <img src="pasta2.jpg" alt="Spanish Pasta" />
+</div>
+
+    <!-- Favorite Animal -->
+    <div class="capybara-container">
+        <div class="section-title">🦫 Favorite Animal</div>
+        <img class="capybara" src="capy.jpeg" alt="Capybara" />
+    </div>
+
+    <!-- Audio Section -->
+    <div class="audio-container">
+        <div class="song-title">🎧 Now Playing: <strong>15 Minutes - Sabrina Carpenter</strong></div>
+        <audio controls>
+            <source src="Sabrina Carpenter - 15 Minutes (Official Lyric Video).mp3" type="audio/mpeg">
+        </audio>
+    </div>
+</div>
+
+</body>
+</html>
